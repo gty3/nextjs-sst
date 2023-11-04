@@ -1,0 +1,354 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "prod-my-app-Site.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "prod-my-app-Site.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "prod-my-app-Site": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://614766294974/us-east-1",
+      "properties": {
+        "templateFile": "prod-my-app-Site.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "sst:app": "my-app",
+          "sst:stage": "prod"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::614766294974:role/cdk-hnb659fds-deploy-role-614766294974-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::614766294974:role/cdk-hnb659fds-cfn-exec-role-614766294974-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-614766294974-us-east-1/13eafaefaf4c32f17ed9773b6d784c1f3e8cb72617df0ce613e0a0114bc35b54.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "prod-my-app-Site.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::614766294974:role/cdk-hnb659fds-lookup-role-614766294974-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "prod-my-app-Site.assets"
+      ],
+      "metadata": {
+        "/prod-my-app-Site": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "sst:app",
+                "Value": "my-app"
+              },
+              {
+                "Key": "sst:stage",
+                "Value": "prod"
+              }
+            ]
+          }
+        ],
+        "/prod-my-app-Site/CustomResourceHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerServiceRole41AEC181"
+          }
+        ],
+        "/prod-my-app-Site/CustomResourceHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerE8FB56BA"
+          }
+        ],
+        "/prod-my-app-Site/Bucket/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketD7FEB781"
+          }
+        ],
+        "/prod-my-app-Site/Bucket/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketPolicy2A6F133E"
+          }
+        ],
+        "/prod-my-app-Site/Bucket/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketAutoDeleteObjectsCustomResource055E5DCD"
+          }
+        ],
+        "/prod-my-app-Site/Bucket/Parameter_bucketName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketParameterbucketNameA128EBF8"
+          }
+        ],
+        "/prod-my-app-Site/site/S3Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteS3Bucket2B2851F3"
+          }
+        ],
+        "/prod-my-app-Site/site/S3Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteS3BucketPolicyBB4DF05F"
+          }
+        ],
+        "/prod-my-app-Site/site/S3Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteS3BucketAutoDeleteObjectsCustomResource3E10A2DE"
+          }
+        ],
+        "/prod-my-app-Site/site/CloudFrontFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteCloudFrontFunctionE91DD486"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/AssetReplacerPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionAssetReplacerPolicy304BF125"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/AssetReplacer/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionAssetReplacer9A11D516"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/ServerFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionServiceRole8328A688"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionServiceRoleDefaultPolicy6EA49472"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/ServerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunction6DFA6F1B"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/ServerFunction/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionLogRetention7123678D"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/ServerFunction/FunctionUrl/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionFunctionUrl1B09C490"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunction/ServerFunction/invoke-function-url": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctioninvokefunctionurlEABB57E1"
+          }
+        ],
+        "/prod-my-app-Site/site/ImageFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteImageFunctionServiceRoleAD5B95E2"
+          }
+        ],
+        "/prod-my-app-Site/site/ImageFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteImageFunctionServiceRoleDefaultPolicy39F33332"
+          }
+        ],
+        "/prod-my-app-Site/site/ImageFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteImageFunctionD6B403E9"
+          }
+        ],
+        "/prod-my-app-Site/site/ImageFunction/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteImageFunctionLogRetentionD1B5BECE"
+          }
+        ],
+        "/prod-my-app-Site/site/ImageFunction/FunctionUrl/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteImageFunctionFunctionUrl110B87E7"
+          }
+        ],
+        "/prod-my-app-Site/site/ImageFunction/invoke-function-url": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteImageFunctioninvokefunctionurl443403A1"
+          }
+        ],
+        "/prod-my-app-Site/site/S3UploaderPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteS3UploaderPolicyE1EE6C9F"
+          }
+        ],
+        "/prod-my-app-Site/site/S3Uploader/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteS3UploaderCAFDFF58"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerCache/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerCacheDD54ACDF"
+          }
+        ],
+        "/prod-my-app-Site/site/Distribution/Origin3/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteDistributionOrigin3S3Origin7C72BBD7"
+          }
+        ],
+        "/prod-my-app-Site/site/Distribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteDistribution706F5265"
+          }
+        ],
+        "/prod-my-app-Site/site/ServerFunctionInvalidatorPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionInvalidatorPolicy004B2ED1"
+          }
+        ],
+        "/prod-my-app-Site/site/CloudFrontInvalidatorPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteCloudFrontInvalidatorPolicyEE18C654"
+          }
+        ],
+        "/prod-my-app-Site/site/CloudFrontInvalidator/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteCloudFrontInvalidator18BEA866"
+          }
+        ],
+        "/prod-my-app-Site/site/RevalidationQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteRevalidationQueue355EB7DA"
+          }
+        ],
+        "/prod-my-app-Site/site/RevalidationFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteRevalidationFunctionServiceRole02D71DA1"
+          }
+        ],
+        "/prod-my-app-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteRevalidationFunctionServiceRoleDefaultPolicy57C55CA4"
+          }
+        ],
+        "/prod-my-app-Site/site/RevalidationFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteRevalidationFunctionEB84F6D0"
+          }
+        ],
+        "/prod-my-app-Site/site/RevalidationFunction/SqsEventSource:prodmyappSitesiteRevalidationQueueAD60296C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteRevalidationFunctionSqsEventSourceprodmyappSitesiteRevalidationQueueAD60296C5F25F12F"
+          }
+        ],
+        "/prod-my-app-Site/site/RevalidationTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteRevalidationTable79579F77"
+          }
+        ],
+        "/prod-my-app-Site/site/Parameter_url/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteParameterurl3D1716BC"
+          }
+        ],
+        "/prod-my-app-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/prod-my-app-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/prod-my-app-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+          }
+        ],
+        "/prod-my-app-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
+          }
+        ],
+        "/prod-my-app-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
+          }
+        ],
+        "/prod-my-app-Site/SSTStackOutputSiteUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SiteUrl"
+          }
+        ],
+        "/prod-my-app-Site/SSTStackOutputSSTMetadata": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SSTMetadata"
+          }
+        ],
+        "/prod-my-app-Site/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/prod-my-app-Site/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "prod-my-app-Site"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
